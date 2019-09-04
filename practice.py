@@ -1,13 +1,13 @@
 def main():
-    n = int(input('Enter the number: '))
-    armstrong(n)
+    # n = int(input('Enter the number: '))
+    # fibbonacci(n)
 
     # n1 = int(input('Enter first number: '))
     # n2 = int(input('Enter second number: '))
     # gcd(n1, n2)
 
-    # s = input('Enter a string: ')
-    # reverse(s)
+    s = input('Enter a string: ')
+    pallindrome(s)
 
 ####### NUMBER FUNCTIONS #######
 
@@ -54,7 +54,7 @@ def gcd(n1, n2):
 
 def sum_of_digits(n):
     sum = 0
-    temp = n  #stroring the number in temp so that we can change the value of n and the original number remains intact
+    temp = n  #storing the number in temp so that we can change the value of n and the original number remains intact
     while temp > 0:  
         digit = temp % 10    #EXTRACTING the digit using modulas operator
         sum   = sum + digit  #ADDING the digit to sum 
@@ -63,7 +63,7 @@ def sum_of_digits(n):
 
 def armstrong(n): # the sum of digits (raised to the power n) of a number is equal to the number itself. Where n is the length of digits
     sum = 0
-    temp = n    #stroring the number in temp so that we can change the value of n and the original number remains intact
+    temp = n    #storing the number in temp so that we can change the value of n and the original number remains intact
     length = len(str(n)) # we use the len function to find the length of the str(n). str is used because len function only accepts a string parameter
     while temp > 0:
         digit = temp % 10               #EXTRACTING the digit using modulas operator
@@ -74,19 +74,20 @@ def armstrong(n): # the sum of digits (raised to the power n) of a number is equ
     else:
         print(f"{n} is not an armstrong number")
 
-def fibbonacci(n):  # 0 1 1 2 4 6
+def fibbonacci(n):  # 0 1 1 2 3 5 8
     n1 = 0
     n2 = 1
     if n <= 0:
         print("Enter a positive integer")
     elif n == 1:
         print(n1)
-    for i in range(1, n+1):
-        print(n1, end=", ") # first time it will print 0 and then it will keep printing the updated value of n1
-        sum = n1 + n2  
-        n1 = n2 
-        n2 = sum
-    print()    
+    else:
+        for i in range(1, n+1):
+            print(n1, end=", ") # first time it will print 0 and then it will keep printing the updated value of n1
+            sum = n1 + n2  
+            n1 = n2 
+            n2 = sum
+        print()    
 
 ####### STRING FUNCTIONS #######  
 
